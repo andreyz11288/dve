@@ -15,11 +15,11 @@ services:
     # In case you need your own Dockerfile. Dockerfile example:
     # ARG EXECUTION_ENVIRONMENT
     # FROM defaultvalue/php:7.3-${EXECUTION_ENVIRONMENT}
-#    build:
-#      context: .
-#      dockerfile: docker/Dockerfile
-#      args:
-#        - EXECUTION_ENVIRONMENT=${EXECUTION_ENVIRONMENT}
+    #    build:
+    #      context: .
+    #      dockerfile: docker/Dockerfile
+    #      args:
+    #        - EXECUTION_ENVIRONMENT=${EXECUTION_ENVIRONMENT}
     user: docker:docker
     sysctls:
       - net.ipv4.ip_unprivileged_port_start=0
@@ -27,27 +27,27 @@ services:
     labels:
       - traefik.enable=true
       # HTTP
-      - traefik.http.routers.andrii-dve-css-com-http.rule=Host(`andrii-dve-css.com`, `www.andrii-dve-css.com`)
+      - traefik.http.routers.andrii-dve-css-com-http.rule=Host(`andrii-dve-css.com`,`www.andrii-dve-css.com`)
       - traefik.http.routers.andrii-dve-css-com-http.entrypoints=http
       - traefik.http.routers.andrii-dve-css-com-http.service=andrii-dve-css-com-http
       - traefik.http.services.andrii-dve-css-com-http.loadbalancer.server.port=80
       - traefik.http.services.andrii-dve-css-com-http.loadbalancer.server.scheme=http
       # HTTPS
-      - traefik.http.routers.andrii-dve-css-com-https.rule=Host(`andrii-dve-css.com`, `www.andrii-dve-css.com`)
+      - traefik.http.routers.andrii-dve-css-com-https.rule=Host(`andrii-dve-css.com`,`www.andrii-dve-css.com`)
       - traefik.http.routers.andrii-dve-css-com-https.entrypoints=https
       - traefik.http.routers.andrii-dve-css-com-https.tls=true
       - traefik.http.routers.andrii-dve-css-com-https.service=andrii-dve-css-com-https
       - traefik.http.services.andrii-dve-css-com-https.loadbalancer.server.port=443
       - traefik.http.services.andrii-dve-css-com-https.loadbalancer.server.scheme=https
-      # Develop with extension that allows setting livereload host and port - https://github.com/lokcito/livereload-extensions
-      - traefik.http.routers.andrii-dve-css-com-livereload-https.rule=Host(`andrii-dve-css.com`, `www.andrii-dve-css.com`)
+     # Develop with extension that allows setting livereload host and port - https://github.com/lokcito/livereload-extensions
+      - traefik.http.routers.andrii-dve-css-com-livereload-https.rule=Host(`andrii-dve-css.com`,`www.andrii-dve-css.com`)
       - traefik.http.routers.andrii-dve-css-com-livereload-https.entrypoints=https
       - traefik.http.routers.andrii-dve-css-com-livereload-https.tls=true
       - traefik.http.routers.andrii-dve-css-com-livereload-https.service=andrii-dve-css-com-livereload-https
       - traefik.http.services.andrii-dve-css-com-livereload-https.loadbalancer.server.port=35729
       - traefik.http.services.andrii-dve-css-com-livereload-https.loadbalancer.server.scheme=http
-      #      -
-      - traefik.http.routers.andrii-dve-css-com-livereload-http.rule=Host(`andrii-dve-css.com`, `www.andrii-dve-css.com`)
+    #      -
+      - traefik.http.routers.andrii-dve-css-com-livereload-http.rule=Host(`andrii-dve-css.com`,`www.andrii-dve-css.com`)
       - traefik.http.routers.andrii-dve-css-com-livereload-http.entrypoints=http
       - traefik.http.routers.andrii-dve-css-com-livereload-http.service=andrii-dve-css-com-livereload-http
       - traefik.http.services.andrii-dve-css-com-livereload-http.loadbalancer.server.port=35729
@@ -57,10 +57,10 @@ services:
       - "andrii-dve-css.com www.andrii-dve-css.com:127.0.0.1"
       # Required for xDebug on Linux hosts till docker.host.internal is not available by default - https://github.com/docker/libnetwork/pull/2348/files
       - "host.docker.internal:172.17.0.1"
-#    links:
-#      - memcached
-#      - redis
-#      - elasticsearch
+    #    links:
+    #      - memcached
+    #      - redis
+    #      - elasticsearch
     external_links:
       - mariadb103:mysql
       - mailhog

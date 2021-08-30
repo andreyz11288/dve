@@ -1,0 +1,116 @@
+body{
+  margin: 0;
+  position: relative;
+
+}
+h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+header {
+  position: relative;
+}
+.header-hamburger {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  border: none;
+  background-color: @color-white;
+}
+.first-header,
+.second-header,
+.third-header {
+  width: 35px;
+  height: 5px;
+  background-color: @color-first;
+}
+.second-header {
+  margin-top: 5px;
+}
+.third-header {
+  margin-top: 5px;
+}
+.logo-header {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 230px;
+  & > a {
+    text-decoration: none;
+  }
+}
+.logo-header-first,
+.logo-header-second {
+  font-family: 'Myriad Pro';
+  font-size: 72px;
+  line-height: 1.2;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: @color-first;
+}
+.logo-header-second {
+  text-transform: none;
+  color: @color-third;
+}
+.active {
+  border-radius: 50px;
+  overflow: hidden;
+}
+.header-hamburger{
+  cursor: pointer;
+}
+.modal-header-hamburger {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+  opacity: 0;
+}
+.modal-header-container> li:first-letter{
+  text-transform: uppercase;
+}
+.modal-header-container> li:not(:first-child) {
+  margin-top: 10px;
+}
+.modal-header-container {
+  background-color: @color-second;
+  padding: 10px;
+  & > li {
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    background-color: @color-white;
+    border-radius: 15px;
+    & > a{
+      text-decoration: none;
+      color: @color-third;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 30px;
+      &:hover{
+        color:@color-first
+      }
+    }
+  }
+}
+.divUp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  border-radius: 50%;
+  border: 1px solid @color-second;
+}
+.act {
+  opacity: 1;
+}
+.specialChar {
+  position: absolute;
+  font-size: 46px;
+  top: -5px;
+  left: 8px;
+  color: @color-second;
+}
