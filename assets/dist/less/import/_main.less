@@ -130,14 +130,20 @@
   text-align: center;
   padding: 0 70px;
   @media screen and (min-width: 770px){
-  //display: flex;
-  width: 630px;
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  //width: 630px;
   }
 }
 .list-offers{
   @media screen and (min-width: 770px){
-    display: inline-block;
+    //display: inline-block;
     width: 225px;
+    padding: 0 10px;
+    //&:not(:first-child){
+    //  margin-left: 120px;
+    //}
     //flex-basis: 50%;
   }
 
@@ -149,9 +155,9 @@
     padding-top: 30px;
   }
 }
-.list-offers:nth-child(even){
-  margin-left: 130px;
-}
+//.list-offers:nth-child(even){
+//  margin-left: 130px;
+//}
 .list-offers:not(:first-child){
   margin-top: 30px;
 }
@@ -232,17 +238,23 @@
     font-size: 16px;
   }
 }
+.recent-project-list-all{
+  @media screen and (min-width: 770px){
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
 .recent-project-list{
+  @media screen and (min-width: 770px){
+    margin-top: 50px;
+  }
   width: 100%;
   &:not(:first-child){
     margin-top: 55px;
   }
   @media screen and (min-width: 770px){
     width: 250px;
-    display: inline-block;
-    &:nth-child(even){
-      margin-left: 70px;
-    }
   }
 }
 .recent-project-list-all{
@@ -250,7 +262,9 @@
   margin-top: 80px;
   margin-bottom: 120px;
   list-style: none;
-
+  @media screen and (min-width: 770px){
+    margin-top: 30px;
+  }
 }
 .recent-project-img-title{
   margin-left: auto;
@@ -260,6 +274,9 @@
   border: 1px solid @color-white;
   & > img{
     max-width: 100%;
+    @media screen and (min-width: 770px) {
+      height: 165px;
+    }
   }
   & > h3{
     display: inline-block;
